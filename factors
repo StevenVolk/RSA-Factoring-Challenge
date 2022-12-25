@@ -5,11 +5,8 @@ arg = sys.argv
 f = open(arg[-1], 'r')
 for line in f:
     number = int(line)
-    if (number % 2 == 0):
-        print("{}={}*{}".format(number, number//2, 2))
-    else:
-        for i in range(3, number, 2):
-            if (number % i == 0):
-                print("{}={}*{}".format(number, number//i, i))
-                break
+    for i in range(2, number):
+        if (number % i == 0):
+            print("{}={}*{}".format(number, number//i, i))
+            break
 f.close()
