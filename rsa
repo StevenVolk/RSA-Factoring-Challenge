@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import sys
+import math
+
+arg = sys.argv
+f = open(arg[-1], 'r')
+for line in f:
+    number = int(line)
+    start = int(math.sqrt(number))
+    for i in range(start, number):
+        if number % i == 0:
+            print("{}={}*{}".format(number, i, number//i))
+            break
+f.close()
