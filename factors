@@ -1,13 +1,21 @@
 #!/usr/bin/python3
 import sys
-
+import math
 arg = sys.argv
 f = open(arg[-1], 'r')
 for line in f:
+    flag = 0
     number = int(line)
     divisor = set()
-    for i in range(2, (number//2)+1):
+    for i in range(2, 99):
         if (number % i == 0):
-                print("{}={}*{}".format(number, number//i, i))
+            print("{}={}*{}".format(number, number//i, i))
+            flag = 1
+            break
+    if flag == 0:
+        i = int(math.sqrt(number))
+        for j in range(i, number):
+            if number % j == 0:
+                print("{}={}*{}".format(number, number//j, j))
                 break
 f.close()
