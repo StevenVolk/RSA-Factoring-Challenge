@@ -7,14 +7,14 @@ f = open(arg[-1], 'r')
 for line in f:
     flag = 0
     number = int(line)
-    for i in range(2, 20):
+    for i in range(2, 200):
         if (number % i == 0):
             print("{}={}*{}".format(number, number//i, i))
             flag = 1
             break
     if flag == 0:
         i = int(math.sqrt(number))
-        for j in range(i, i+20):
+        for j in range(i, i+200):
             if number % j == 0:
                 print("{}={}*{}".format(number, number//j, j))
                 flag = 1
