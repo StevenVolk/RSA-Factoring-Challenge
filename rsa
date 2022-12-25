@@ -11,4 +11,5 @@ for line in f:
         if number % i == 0:
             print("{}={}*{}".format(number, i, number//i))
             break
+    break
 f.close()
