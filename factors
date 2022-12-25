@@ -14,7 +14,10 @@ for line in f:
             break
     if flag == 0:
         i = int(math.sqrt(number))
-        for j in range(i, i+999):
+        stop = i + 9999
+        if (number < i + 9999):
+            stop = number
+        for j in range(i, stop):
             if number % j == 0:
                 print("{}={}*{}".format(number, j, number//j))
                 flag = 1
