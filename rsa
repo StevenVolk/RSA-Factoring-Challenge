@@ -9,7 +9,11 @@ for line in f:
     start = int(math.sqrt(number))
     for i in range(start, number):
         if number % i == 0:
-            print("{}={}*{}".format(number, i, number//i))
+            if i < number//i:
+                x, y = number//i, i
+            else:
+                x, y = i, number//i
+            print("{}={}*{}".format(number, x, y))
             break
     break
 f.close()
