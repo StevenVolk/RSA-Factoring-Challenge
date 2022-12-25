@@ -6,7 +6,6 @@ f = open(arg[-1], 'r')
 for line in f:
     flag = 0
     number = int(line)
-    divisor = set()
     for i in range(2, 999999):
         if (number % i == 0):
             print("{}={}*{}".format(number, number//i, i))
@@ -16,6 +15,6 @@ for line in f:
         i = int(math.sqrt(number))
         for j in range(i, number):
             if number % j == 0:
-                print("{}={}*{}".format(number, number//j, j))
+                print("{}={}*{}".format(number, j, number//j))
                 break
 f.close()
