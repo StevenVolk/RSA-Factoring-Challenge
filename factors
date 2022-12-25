@@ -4,7 +4,7 @@ import sys
 arg = sys.argv
 f = open("r", arg[2])
 for line in f:
-    number = atoi(line)
+    number = line
     for i in range(2, number + 1):
         if (number % i == 0):
             print("{0}={1}*{2}".format(number, number/i, i))
