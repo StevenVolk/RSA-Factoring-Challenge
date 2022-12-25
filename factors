@@ -6,7 +6,7 @@ f = open(arg[-1], 'r')
 for line in f:
     flag = 0
     number = int(line)
-    for i in range(2, 999999):
+    for i in range(2, 9999):
         if (number % i == 0):
             print("{}={}*{}".format(number, number//i, i))
             flag = 1
