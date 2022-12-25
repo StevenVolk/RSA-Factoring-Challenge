@@ -7,7 +7,7 @@ for line in f:
     flag = 0
     number = int(line)
     divisor = set()
-    for i in range(2, 99):
+    for i in range(2, 999999):
         if (number % i == 0):
             print("{}={}*{}".format(number, number//i, i))
             flag = 1
