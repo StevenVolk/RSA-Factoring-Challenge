@@ -7,16 +7,21 @@ f = open(arg[-1], 'r')
 for line in f:
     flag = 0
     number = int(line)
-    for i in range(2, 200):
+    for i in range(2, 99):
         if (number % i == 0):
             print("{}={}*{}".format(number, number//i, i))
             flag = 1
             break
     if flag == 0:
         i = int(math.sqrt(number))
-        for j in range(i, i+200):
+        for j in range(i, i+99):
             if number % j == 0:
-                print("{}={}*{}".format(number, number//j, j))
+                print("{}={}*{}".format(number, j, number//j))
                 flag = 1
                 break
+    if flag == 0:
+        stop = int(math.sqrt(number))
+        for i in range(99, stop):
+            print("{}={}*{}".format(number, number//i, i))
+            break
 f.close()
