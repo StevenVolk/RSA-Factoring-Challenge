@@ -5,13 +5,9 @@ arg = sys.argv
 f = open(arg[-1], 'r')
 for line in f:
     number = int(line)
-    if (number % 2 == 0):
-        print("{}={}*{}".format(number, number//2, 2))
-    else:
-        i = 3
-        while (i < number):
-            if (number % i == 0):
+    divisor = set()
+    for i in range(2, (number//2)+1):
+        if (number % i == 0):
                 print("{}={}*{}".format(number, number//i, i))
                 break
-            i += 2
 f.close()
