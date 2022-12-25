@@ -2,7 +2,7 @@
 import sys
 
 arg = sys.argv
-f = open("r", arg[1])
+f = open("r", arg[-1])
 for number in f:
     for i in range(2, number):
         if (number % i == 0):
