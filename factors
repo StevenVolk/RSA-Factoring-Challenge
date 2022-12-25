@@ -3,8 +3,8 @@ import sys
 
 arg = sys.argv
 f = open("r", arg[2])
-for line in f:
-    number = line
-    for i in range(2, number + 1):
+for number in f:
+    for i in range(2, number):
         if (number % i == 0):
             print("{0}={1}*{2}".format(number, number/i, i))
+f.close()
