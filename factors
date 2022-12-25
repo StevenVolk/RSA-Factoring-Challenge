@@ -7,7 +7,10 @@ f = open(arg[-1], 'r')
 for line in f:
     flag = 0
     number = int(line)
-    for i in range(2, 999):
+    stop = int(math.sqrt(number))
+    if (stop > 999):
+        stop = 999
+    for i in range(2, stop):
         if (number % i == 0):
             print("{}={}*{}".format(number, number//i, i))
             flag = 1
