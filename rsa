@@ -4,16 +4,15 @@ import math
 
 arg = sys.argv
 f = open(arg[-1], 'r')
-for line in f:
-    number = int(line)
-    start = int(math.sqrt(number))
-    for i in range(start, number):
-        if number % i == 0:
-            if i < number//i:
-                x, y = number//i, i
-            else:
-                x, y = i, number//i
-            print("{}={}*{}".format(number, x, y))
-            break
-    break
+line = f.read()
+number = int(line)
+start = int(math.sqrt(number))
+for i in range(start, number):
+    if number % i == 0:
+        if i < number//i:
+            x, y = number//i, i
+        else:
+            x, y = i, number//i
+        print("{}={}*{}".format(number, x, y))
+        break
 f.close()
