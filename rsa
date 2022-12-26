@@ -7,7 +7,8 @@ f = open(arg[-1], 'r')
 line = f.read()
 number = int(line)
 start = int(math.sqrt(number))
-for i in range(start, number):
+x, y = 0, 0
+for i in range(2, 999999):
     if number % i == 0:
         if i < number//i:
             x, y = number//i, i
@@ -15,4 +16,13 @@ for i in range(start, number):
             x, y = i, number//i
         print("{}={}*{}".format(number, x, y))
         break
+if (x == 0 and y == 0):
+    for i in range(start, 999999, -1):
+        if number % i == 0:
+            if i < number//i:
+                x, y = number//i, i
+            else:
+                x, y = i, number//i
+            print("{}={}*{}".format(number, x, y))
+            break
 f.close()
